@@ -206,6 +206,17 @@ $router->set404(function() {
 
 The 404 will be executed when no route pattern was matched to the current URL.
 
+### SDI Implementation - Before Route Middlewares
+The SDI fork of Bramus router will take an optional third argument in the route definition
+
+The third method is the middleware to be run before the route funciton
+```php
+$router->get(
+   '/token/validate/'
+ , 'route_function()'
+ , 'middleware_function()'
+);
+```
 
 ### Before Route Middlewares
 
