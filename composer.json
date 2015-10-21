@@ -1,5 +1,5 @@
 {
-    "name": "bramus/router",
+    "name": "sdidev/router",
     "description": "A lightweight and simple object oriented PHP Router",
     "keywords": ["router", "routing"],
     "homepage": "https://github.com/bramus/router",
@@ -8,6 +8,7 @@
     "authors": [
         {
             "name": "Bram(us) Van Damme",
+            "name": "Deac Karns",
             "email": "bramus@bram.us",
             "homepage": "http://www.bram.us"
         }
