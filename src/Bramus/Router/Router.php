@@ -309,7 +309,9 @@ class Router {
                 }, $matches, array_keys($matches));
 
                 // call the handling middleware function with the URL parameters
-                call_user_func_array($route['mw'], $params);
+                if(isset($route['mw'])){
+                    call_user_func_array($route['mw'], $params);
+                }
 
                 // call the handling function with the URL parameters
                 call_user_func_array($route['fn'], $params);
