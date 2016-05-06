@@ -316,7 +316,7 @@ class Router {
                 // SDI Modification
                 if(isset($route['mw'])){
                     if(!is_array($route['mw'])){
-                        throw new Exception("Middleware must be an array", 1);
+                        throw new \Exception("Middleware must be an array", 1);
                     }
                     foreach ($route['mw'] as $middleware) {
                         call_user_func_array($middleware, $params);
