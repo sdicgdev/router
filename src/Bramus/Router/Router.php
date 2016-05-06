@@ -307,7 +307,10 @@ class Router {
                     }
 
                 }, $matches, array_keys($matches));
-
+                
+                // mysql real escape incomming parameters
+                $params = \Rhonda\Mysql::real_escape($params);
+                
                 // call the handling middleware function with the URL parameters
                 if(isset($route['mw'])){
                     call_user_func_array($route['mw'], $params);
