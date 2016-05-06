@@ -309,11 +309,18 @@ class Router {
                 }, $matches, array_keys($matches));
                 
                 // mysql real escape incomming parameters
+                // SDI Modification
                 $params = \Rhonda\Mysql::real_escape($params);
                 
                 // call the handling middleware function with the URL parameters
+                // SDI Modification
                 if(isset($route['mw'])){
-                    call_user_func_array($route['mw'], $params);
+                    if(!is_array($route['mw'])){
+                        throw new Exception("Middleware must be an array", 1);
+                    }
+                    foreach ($route['mw'] as $middleware) {
+                        call_user_func_array($middleware, $params);
+                    }
                 }
 
                 // call the handling function with the URL parameters
